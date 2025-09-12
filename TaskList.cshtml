@@ -1,0 +1,18 @@
+@page
+@model TaskListApp.Pages.TaskListModel
+@{
+    ViewData["Title"] = "Список задач";
+}
+
+<h1>Список задач</h1>
+
+@foreach (var task in Model.Tasks)
+{
+    <div class="card mb-2">
+        <div class="card-body">
+            <h5 class="card-title">@task.Title</h5>
+            <p class="card-text">@task.Description</p>
+            <small>Создана: @task.CreatedAt</small>
+        </div>
+    </div>
+}
